@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *Must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Clever - Education &amp; Courses Template | Blog Details</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header-area d-flex justify-content-between align-items-center">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <a ><span>Phone:</span> +44 300 303 0266</a>
+                <a ><span>Email:</span> <span class="__cf_email__" data-cfemail="94fdfaf2fbd4f7f8f1e2f1e6baf7fbf9">[email&#160;protected]</span></a>
+            </div>
+            <!-- Follow Us -->
+            <div class="follow-us">
+                <span>Follow us</span>
+                <a ><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a ><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a ><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+        <!-- Navbar Area -->
+        <div class="clever-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <!-- Menu -->
+                <nav class="classy-navbar justify-content-between" id="cleverNav">
+
+                    <!-- Logo -->
+                    <a class="nav-brand" ><img src="img/core-img/logo.png" alt=""></a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+
+                        <!-- Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul>
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li><a href="{% url 'course_view' %}?page=1">Courses</a></li>
+                                <li><a href="{% url 'instructor' %}">Instructors</a></li>
+                                <li><a href="{% url 'blog' %}">Blog</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
+                            </ul>
+
+                            <!-- Search Button -->
+                            <div class="search-area">
+                                <form action="index.html#" method="post">
+                                    <input type="search" name="search" id="search" placeholder="Search">
+                                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                </form>
+                            </div>
+
+                            {% if user.is_authenticated %}
+                                <div class="register-login-area">
+                                    <a href="{% url 'logout' %}" class="btn active">logout</a>
+                                </div>
+                            {% else %}
+                                <div class="register-login-area">
+                                    <a href="{% url 'register' %}" class="btn">Register</a>
+                                    <a href="{% url 'login' %}" class="btn active">Login</a>
+                                </div>
+                            {% endif %}
+
+                        </div>
+                        <!-- Nav End -->
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb-area">
+        <!-- Breadcumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="blog-details.html#">Home</a></li>
+                <li class="breadcrumb-item"><a href="blog-details.html#">Courses</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Art &amp; Design</li>
+            </ol>
+        </nav>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Catagory Area Start ##### -->
+    <div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url({{blogs.img.url}});">
+        <div class="blog-details-headline">
+            <h3>{{blogs.name}}</h3>
+            <div class="meta d-flex align-items-center justify-content-center">
+                <a href="blog-details.html#">{{blogs.author}}</a>
+                <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                <a href="blog-details.html#">{{blogs.category}}</a>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Catagory Area End ##### -->
+
+    <!-- ##### Blog Details Content ##### -->
+    <div class="blog-details-content section-padding-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <!-- Blog Details Text -->
+                    <div class="blog-details-text">
+                        <p>Sed elementum lacus a risus luctus suscipit. Aenean sollicitudin sapien neque, in fermentum lorem dignissim a. Nullam eu mattis quam. Donec porttitor nunc a diam molestie blandit. Maecenas quis ultrices ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam eget vehicula lorem, vitae porta nisi. Ut vel quam erat. Ut vitae erat tincidunt, tristique mi ac, pharetra dolor. In et suscipit ex. Pellentesque aliquet velit tortor, eget placerat mi scelerisque a. Aliquam eu dui efficitur purus posuere viverra. Proin ut elit mollis, euismod diam et, fermentum enim.</p>
+                        <h5 class="text-center py-4">Praesent eget nisl eget odio feugiat rhoncus. Nam elementum, lectus at consectetur venenatis, metus lectus viverra tellus, id feugiat nulla nisi sed velit. Curabitur id enim erat.</h5>
+                        <p>Vivamus finibus risus ut lectus viverra hendrerit. Integer vitae dolor vestibulum, pharetra lorem nec, cursus libero. Vestibulum posuere scelerisque metus, eu aliquet dolor ornare ut. Sed sit amet tristique velit. Suspendisse gravida quis nisi pretium blandit. Quisque mattis tristique odio vitae commodo. Mauris ullamcorper odio nec elit pharetra sagittis. Morbi ultrices arcu ac egestas bibendum. Proin nec sodales purus, in facilisis libero.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="related-posts section-padding-100-0">
+            <div class="container-fluid">
+                <div class="row">
+                    {% for blog in blog_two %}
+                        <div class="col-12 col-lg-6">
+                            <div class="single-blog-area mb-100">
+                                <div style="background-image: url({{blog.img.url}}); width: 697px; height: 400px;
+                                 background-repeat: no-repeat; background-size: cover; background-position: center; "></div>
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <a href="blog-details.html#" class="blog-headline">
+                                        <h4>{{blog.name}}</h4>
+                                    </a>
+                                    <div class="meta d-flex align-items-center">
+                                        <a href="blog-details.html#">{{blog.author}}</a>
+                                        <span><i class="fa fa-circle" aria-hidden="true"></i></span>
+                                        <a href="blog-details.html#">{{blog.category}}</a>
+                                    </div>
+                                    <p>{{blog.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Post A Comment -->
+                <div class="col-12 col-lg-6">
+                    <div class="post-a-comments mb-70">
+                        <h4>Post a Comment</h4>
+
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        {{form.name}}
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="form-group">
+                                        {{form.email}}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{form.message}}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn clever-btn w-100">Post A Comment</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <!-- Comments -->
+                <div class="col-12 col-lg-6">
+                    <div class="comments-area">
+                        {% if comments %}
+                            <h4>{{ comments.count }} comments</h4>
+                            <ol class="comments-list">
+                                <!-- Single Comment Area -->
+                                <li class="single_comment_area">
+                                    {% for comment in comments %}
+                                        <div class="single-comment-wrap mb-30">
+                                            <div class="d-flex justify-content-between mb-30">
+                                                <!-- Comment Admin -->
+                                                <div class="comment-admin d-flex">
+                                                    <div class="thumb">
+                                                        <img src="{% static 'img/bg-img/images (1).jpg' %}" alt="">
+                                                    </div>
+                                                    <div class="text">
+                                                        <h6>{{comment.name}}</h6>
+                                                        <span>{{comment.date}}</span>
+                                                    </div>
+                                                </div>
+                                                <!-- Reply -->
+                                                <div class="reply">
+                                                    <a href="blog-details.html#">Reply</a>
+                                                </div>
+                                            </div>
+                                            <p>{{comment.message}}</p>
+                                        </div>
+                                    {% endfor %}
+                                </li>
+                            </ol>
+                        {% else %}
+                            <h4>no comment</h4>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="load-more text-center mt-50">
+                        <a href="blog-details.html#" class="btn clever-btn btn-2">Load More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Blog Details Content ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <!-- Top Footer Area -->
+        <div class="top-footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Footer Logo -->
+                        <div class="footer-logo">
+                            <a ><img src="img/core-img/logo2.png" alt=""></a>
+                        </div>
+                        <!-- Copywrite -->
+                        <p><a href=""><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Footer Area -->
+        <div class="bottom-footer-area d-flex justify-content-between align-items-center">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <a ><span>Phone:</span> +44 300 303 0266</a>
+                <a ><span>Email:</span> <span class="__cf_email__" data-cfemail="6e070008012e0d020b180b1c400d0103">[email&#160;protected]</span></a>
+            </div>
+            <!-- Follow Us -->
+            <div class="follow-us">
+                <span>Follow us</span>
+                <a ><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a ><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script data-cfasync="false" src="{% static '../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
+    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/bootstrap/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+    <!-- All Plugins js -->
+    <script src="{% static 'js/plugins/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/active.js' %}"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+    
+</body>
+
+</html>

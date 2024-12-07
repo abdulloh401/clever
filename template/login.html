@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static  %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <form method="post" style="border: 2px solid black; display: flex; flex-direction: column; justify-content: center;
+     align-items: center; width: 450px; height: 300px; margin: 200px auto;">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div style="display: flex; gap: 25px;">
+            <button style="width: 50px; height: 30px; border-radius: 10px; background: white;" type="submit">login</button>
+            <a style="margin-top: 5px;" href="{% url 'register' %}">don't have register</a>
+        </div>
+    </form>
+</body>
+</html>
